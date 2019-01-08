@@ -39,9 +39,7 @@ def order():
         print(w['name'], " Per kg", w['price'], "Available", w['available'], "kg")
 
     print("what to add:")
-    # ch = int(input('choice:1 for basmati\n 2.for kolam'))
-    #
-    # if ch == 1:
+
     i = input("rice or pulse or wheat")
     item_name = input("item name")
     price = int(input("price"))

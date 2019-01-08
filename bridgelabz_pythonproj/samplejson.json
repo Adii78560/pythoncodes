@@ -11,11 +11,6 @@
       "price": 70,
       "weight": 220,
       "available": 220
-    },
-    {
-      "name": "abc",
-      "price": 69,
-      "available": 788
     }
   ],
   "pulses": [
@@ -44,11 +39,6 @@
       "price": 100,
       "weight": 150,
       "available": 150
-    },
-    {
-      "name": "gvg",
-      "price": 70,
-      "available": 899
     }
   ]
 }

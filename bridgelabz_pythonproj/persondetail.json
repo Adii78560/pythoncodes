@@ -1,0 +1,54 @@
+{
+  "details": [
+    {
+      "name": "janhavi",
+      "amount": "10000",
+      "shares": 30
+    },
+    {
+      "name": "nikhil",
+      "amount": "20000",
+      "shares": 30
+    },
+    {
+      "name": "push",
+      "amount": "20000",
+      "shares": 34
+    },
+    {
+      "name": "pushkar",
+      "amount": "20000",
+      "shares": 50
+    },
+    {
+      "name": "j",
+      "amount": 47000,
+      "shares": 10
+    },
+    {
+      "name": "rohini",
+      "amount": "60000",
+      "shares": 30
+    },
+    {
+      "name": "shazad",
+      "amount": "80000",
+      "shares": 30
+    },
+    {
+      "name": "gautami",
+      "amount": "30000",
+      "shares": 30
+    },
+    {
+      "name": "k",
+      "amount": "9000",
+      "shares": 20
+    },
+    {
+      "name": "l",
+      "amount": 2000,
+      "shares": 33
+    }
+  ]
+}
