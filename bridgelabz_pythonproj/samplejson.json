@@ -1,0 +1,54 @@
+{
+  "rice": [
+    {
+      "name": "basmati",
+      "price": 100,
+      "weight": 200,
+      "available": 200
+    },
+    {
+      "name": "kolam",
+      "price": 70,
+      "weight": 220,
+      "available": 220
+    },
+    {
+      "name": "abc",
+      "price": 69,
+      "available": 788
+    }
+  ],
+  "pulses": [
+    {
+      "name": "dry beans",
+      "price": 140,
+      "weight": 200,
+      "available": 200
+    },
+    {
+      "name": "dry peas",
+      "price": 103,
+      "weight": 250,
+      "available": 250
+    }
+  ],
+  "wheat": [
+    {
+      "name": "emmer",
+      "price": 200,
+      "weight": 250,
+      "available": 250
+    },
+    {
+      "name": "spelt",
+      "price": 100,
+      "weight": 150,
+      "available": 150
+    },
+    {
+      "name": "gvg",
+      "price": 70,
+      "available": 899
+    }
+  ]
+}
