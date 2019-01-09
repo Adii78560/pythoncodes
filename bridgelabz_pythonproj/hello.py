@@ -1,53 +1,30 @@
-'''
-/**********************************************************************************
-* Purpose: Create a Slot of 10 to store Chain of Numbers that belong to each Slot to
-* efficiently search a number from a given set of number
+import tkinter
 
-* @author : Janhavi Mhatre
-* @python version 3.7
-* @platform : PyCharm
-* @since 3-1-2019
-*
-***********************************************************************************/
-'''
+F1 = tkinter.Frame()
+s = tkinter.Scrollbar(F1)
+L = tkinter.Listbox(F1)
 
-size = 11
+s.pack(side=tkinter.RIGHT, fill=tkinter.Y)
+L.pack(side=tkinter.LEFT, fill=tkinter.Y)
 
-slot = [None] * size
-data = [[] for _ in range(10)]
+s['command'] = L.yview
+L['yscrollcommand'] = s.set
 
-print("stores key values ", slot)
-# print("stores key data ", data)
+for i in range(30): 
+   L.insert(tkinter.END, str(i))
 
-filename = "/home/admin1/bridgelabz_pythonproj/samplelist.txt"
-with open(filename) as f:
-    values = f.read().split(" ")
-    values[-1] = values[-1].strip()
+F1.pack(side=tkinter.TOP)
 
-print("values in file: ", values)
+F2 = tkinter.Frame()
+lab = tkinter.Label(F2)
 
-values = [int(x) for x in values]
-def hash_function(x):
+def poll():
+    lab.after(200, poll)
+    sel = L.curselection()
+    lab.config(text=str(sel))
 
-    return x % 11
+lab.pack()
+F2.pack(side=tkinter.TOP)
 
-
-# values = [int(value) for value in values]
-
-# hashvalues = map(hash_function, values)
-# hashvalues = list(hashvalues)
-# print("hash values ",hashvalues)
-
-
-
-def insert(data, key, values):
-    for i in values:
-        #slot[hash_function(key)] = i
-        data[hash_function(key)].append(i)
-        #print(data)
-
-insert(slot, 15, 'cat')
-# insert(slot, 15, 'dog')
-
-#print(slot)
-#print(data)
+poll()
+tkinter.mainloop()

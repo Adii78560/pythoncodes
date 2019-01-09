@@ -1,33 +1,33 @@
 from tkinter import *
 import json
+
 root = Tk()
 root.geometry('500x500')
 
-
 def store():
-    f_name = entry_1.get("1.0","end-1c")
-    l_name = entry_2.get("1.0","end-1c")
-    a = entry_3.get("1.0","end-1c")
-    c = entry_4.get("1.0","end-1c")
-    s = entry_5.get("1.0","end-1c")
-    z = entry_6.get("1.0","end-1c")
-    p = entry_7.get("1.0","end-1c")
+    f_name = entry_1.get("1.0", "end-1c")
+    l_name = entry_2.get("1.0", "end-1c")
+    a = entry_3.get("1.0", "end-1c")
+    c = entry_4.get("1.0", "end-1c")
+    s = entry_5.get("1.0", "end-1c")
+    z = entry_6.get("1.0", "end-1c")
+    p = entry_7.get("1.0", "end-1c")
 
-    print(f_name,l_name,a,c,s,z,p)
+    print(f_name, l_name, a, c, s, z, p)
     with open('/home/admin1/bridgelabz_pythonproj/address.json', 'r') as f:
         strr = f.read()  # open and read file
         obj = json.loads(strr)  # read json file like object and parse to string
 
     with open('/home/admin1/bridgelabz_pythonproj/address.json', 'w') as f:
         obj['address details'].append({  # open file in write mode and append values
-            "first name": f_name,
-            "last name": l_name,
-            "address": a,
-            "city": c,
-            "state": s,
-            "zip code": z,
-            "phone no": p
-        })
+                "first name": f_name,
+                "last name": l_name,
+                "address": a,
+                "city": c,
+                "state": s,
+                "zip code": z,
+                "phone no": p
+            })
         f.write(json.dumps(obj, indent=2))  # json object to string
         f.close()
 
@@ -77,6 +77,6 @@ label_7.place(x=85, y=430)
 entry_7 = Text(root, height=2, width=50)
 entry_7.place(x=240, y=430)
 
-Button(root, text='submit',width=20,bg='brown',fg='white', command = lambda : store()).place(x=240,y=480)
+Button(root, text='submit', width=20, bg='brown', fg='white', command=lambda: store() ).place(x=240, y=480)
 
 root.mainloop()

@@ -12,53 +12,7 @@
 '''
 import json
 
-# inventory = {}
-# inventory['rice'] = """{
-#                     "name" : "basmati",
-#                     "price" : 100,
-#                     "weight" : 20
-#                  }
-#                  {
-#                     "name" : "kolam",
-#                     "price" : 70,
-#                     "weight" : 22
-#
-#                  }
-#           """
-# inventory['rice'] = {
-#                     "name" : "kolam",
-#                     "price" : 70,
-#                     "weight" : 22
-#
-#                  }
-#
-# inventory['pulses'] = {
-#                     "name" : "dry beans",
-#                     "price" : 140,
-#                     "weight" : 200
-#
-#                  }
-# inventory['pulses'] = {
-#                     "name" : "dry peas",
-#                     "price" : 103,
-#                     "weight" : 25
-#
-#                  }
-#
-# inventory['wheat'] = {
-#                     "name" : "emmer",
-#                     "price" : 200,
-#                     "weight" : 250
-#
-#                  }
-# inventory['wheat'] = {
-#                         "name": "spelt",
-#                         "price" : 100,
-#                         "weight" : 150
-#                  }
 
-
-# json data in dictionary form
 inventory = """                        
 {
     "rice": [

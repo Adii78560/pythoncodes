@@ -14,12 +14,6 @@
 import json
 
 
-# with open("/home/admin1/BridgeLabz_Python/demo.json", ) as f:
-#     data = json.load(f)  # type is dict     # json string to python object(dict and list)
-#     # loads() method loads a string s stands for string
-#     print(data)
-
-
 def order():
     with open('/home/admin1/bridgelabz_pythonproj/samplejson.json', ) as f:
         data = json.load(f)   # load data from json file
@@ -27,14 +21,14 @@ def order():
         print("Available items in our grocery store:")
         # show = json.dumps(data, indent=2)
     print("rice :")
-    for r in data["rice"]:
+    for r in data["rice"]:    # get the entities from key rice
         print(r['name'], " Per kg", r['price'], "Available", r['available'], "kg")
 
-    print("Pulses :")
+    print("Pulses :")        # get the entities
     for p in data['pulses']:
         print(p['name'], " Per kg", p['price'], "Available", p['available'], "kg")
 
-    print("Wheats :")
+    print("Wheats :")          # get entities
     for w in data['wheat']:
         print(w['name'], " Per kg", w['price'], "Available", w['available'], "kg")
 
@@ -46,17 +40,18 @@ def order():
     quantity = int(input("quantity"))
 
     with open('/home/admin1/bridgelabz_pythonproj/samplejson.json', 'r') as f:
-        str = f.read()
-        obj = json.loads(str)
+        str = f.read()      # open and read file
+        obj = json.loads(str)      # read json file like object and parse to string
 
     with open('/home/admin1/bridgelabz_pythonproj/samplejson.json', 'w') as f:
-        obj[i].append({
+        obj[i].append({               # open file in write mode and append values
             "name": item_name,
             "price": price,
             "available": quantity
         })
-        f.write(json.dumps(obj, indent=2))
+        f.write(json.dumps(obj, indent=2))        # json object to string
         f.close()
 
 order()
+
 
