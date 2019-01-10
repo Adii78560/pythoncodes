@@ -426,13 +426,13 @@ def prime_numbers():
 
 def check_condition():  # taking prime numbers between 0-1000
     list_prime = []
-    for num in range(0, 1000):
+    for num in range(0, 1000):  # range between 0-1000
         if num > 1:
-            for i in range(2, num):
+            for i in range(2, num):  # start from 2 as it is first prime number
                 if (num % i) == 0:
                     break
             else:
-                list_prime.append(num)
+                list_prime.append(num)  # append prime number to list
 
     print(list_prime)
 
@@ -450,33 +450,33 @@ def palindrome(number):  # every prime number which is palindrome is always anag
 
 
 # ALGORITHMS
-elapsed_time = {}    # create a dictionary for storing elapsed time
+elapsed_time = {}  # create a dictionary for storing elapsed time
 
 
 def binarysearchint(list_int, key):
-    s1 = time.time()           # store starting time
-    list_int.sort()            # sort list
-    start = 0                   # initial position
+    s1 = time.time()  # store starting time
+    list_int.sort()  # sort list
+    start = 0  # initial position
     print(list_int)
-    end = len(list_int)          # length of list will be the end
-    for i in range(start, end):   # execute till start to end
-        mid = start + (end - start) // 2       # calculate mid
+    end = len(list_int)  # length of list will be the end
+    for i in range(start, end):  # execute till start to end
+        mid = start + (end - start) // 2  # calculate mid
 
-        if list_int[mid] == key:         # if mid is element to be search then print found
+        if list_int[mid] == key:  # if mid is element to be search then print found
             # globals() ['index'] = mid
             print("found at ", mid, "index")
             break
 
-        elif key > list_int[mid]:    # if element to be search is greater than mid then mid is new start
+        elif key > list_int[mid]:  # if element to be search is greater than mid then mid is new start
             start = mid
 
         else:
-            end = mid         # if element to be search is less than mid then mid is new end
+            end = mid  # if element to be search is less than mid then mid is new end
 
     else:
         print("not found")
-    e1 = time.time()            # record end time
-    el1 = e1 - s1             # elapsed time
+    e1 = time.time()  # record end time
+    el1 = e1 - s1  # elapsed time
     elapsed_time.update({"binary int": el1})  # adding to dictionary
 
 
@@ -488,38 +488,38 @@ def binarysearchstring(list_string, key2):
 
     end = len(list_string)
 
-    for i in range(start, end):
-        mid = start + (end - start) // 2
+    for i in range(start, end):  # for the elements between start to end range
+        mid = start + (end - start) // 2  # calculate mid
 
-        if list_string[mid] == key2:
+        if list_string[mid] == key2:  # if mid is element to be search
             print("found at ", mid)
             break
 
-        elif key2 > list_string[mid]:
+        elif key2 > list_string[mid]:  # if the mid is less than key then start is new mid
             start = mid
 
         else:
-            end = mid
+            end = mid  # if mid is greater than key
     else:
         print("not found")
-    e2 = time.time()
-    el2 = e2 - s2
-    elapsed_time.update({"binary string": el2})
+    e2 = time.time()  # end time
+    el2 = e2 - s2  # elapsed time
+    elapsed_time.update({"binary string": el2})  # update dictionary
     # print(elapsed_time)
 
 
 def bubblesortint(list_int):
     s3 = time.time()
     length = len(list_int)
-    for i in range(1, length - 1):
-        print("pass ", i)
+    for i in range(1, length - 1):  # for elements in range between 1 to end (length -1)
+        print("pass ", i)  # pass number
 
         for j in range(0, length - 1):
-            if list_int[j] > list_int[j + 1]:
+            if list_int[j] > list_int[j + 1]:  # swapping
                 temp = list_int[j + 1]
                 list_int[j + 1] = list_int[j]
                 list_int[j] = temp
-        print("after pass ", i, " ", list_int)
+        print("after pass ", i, " ", list_int)  # output after every pass
     print("total pass required: ", i)
     e3 = time.time()
     el3 = e3 - s3
@@ -530,15 +530,15 @@ def bubblesortstring(list_string):
     s4 = time.time()
     length = len(list_string)
     i = 0
-    for i in range(1, length - 1):
+    for i in range(1, length - 1):  # for elements in range between 1 to end (length -1)
         print("pass ", i)
 
         for j in range(0, length - 1):
-            if list_string[j] > list_string[j + 1]:
+            if list_string[j] > list_string[j + 1]:  # swapping
                 temp = list_string[j + 1]
                 list_string[j + 1] = list_string[j]
                 list_string[j] = temp
-        print("after pass ", i, " ", list_string)
+        print("after pass ", i, " ", list_string)  # output after every pass
     print("total pass required: ", i)
     e4 = time.time()
     el4 = e4 - s4
@@ -548,10 +548,10 @@ def bubblesortstring(list_string):
 def insertionsortint(list_int):
     s5 = time.time()
     length = len(list_int)
-    for i in range(0, length):
+    for i in range(0, length):  # items between 0 to total length
 
-        for j in range(i - 1, -1, -1):
-            if list_int[j] > list_int[j + 1]:
+        for j in range(i - 1, -1, -1):  # (starting element, steps , last element)
+            if list_int[j] > list_int[j + 1]:  # swapping
                 temp = list_int[j + 1]
                 list_int[j + 1] = list_int[j]
                 list_int[j] = temp
@@ -564,10 +564,10 @@ def insertionsortint(list_int):
 def insertionsortstring(list_string):
     s6 = time.time()
     length = len(list_string)
-    for i in range(0, length):
+    for i in range(0, length):  # items between 0 to total length
 
-        for j in range(i - 1, -1, -1):
-            if list_string[j] > list_string[j + 1]:
+        for j in range(i - 1, -1, -1):  # (starting element, steps , last element)
+            if list_string[j] > list_string[j + 1]:  # swapping
                 temp = list_string[j + 1]
                 list_string[j + 1] = list_string[j]
                 list_string[j] = temp
@@ -575,24 +575,24 @@ def insertionsortstring(list_string):
     e6 = time.time()
     el6 = e6 - s6
     elapsed_time.update({"insertion sort string": el6})
-    sorted_elapsed = sorted(elapsed_time.items(), key=lambda x: x[1])
-    # elapsed_time.sort()
+    sorted_elapsed = sorted(elapsed_time.items(), key=lambda x: x[1])  # sort dictionary
+    # elapsed_time.sort()                  # lambda function is used to apply sorting to each element
     print("sorted elapsed time", sorted_elapsed)
 
 
 # GUESS NUMBER
 
 def guess(low, k):
-    mid = low + (k - low) // 2
+    mid = low + (k - low) // 2  # calculate mid
 
-    if (k - low) == 1:
+    if (k - low) == 1:  # if number found at mid
         print("your number is ", mid)
 
-    else:
+    else:  # if not then ask question having range of high and low
         print("is your number less than ", mid)
         b = int(input("if yes type 0 else 1 "))
         if b == 0:
-            guess(low, mid)
+            guess(low, mid)  # recursion to calculate new range
 
         else:
             guess(mid, k)
@@ -612,6 +612,12 @@ def userstring(stringlist):
 
 
 # BUBBLE SORT
+'''
+take every element and compare with next. Small value will come first. use swap to change 
+index of elements 
+'''
+
+
 def bubblesort(listinteger):
     for p in range(len(listinteger) - 1):
         for q in range(len(listinteger) - 1):
@@ -627,40 +633,40 @@ def userint(intlist):
 
 # MERGE SORT
 
-def merge_sort(array):
+def merge_sort(array):  # divide array in left and right half
     if len(array) <= 1:
         return array
 
     mid = int(len(array) / 2)
     l = array[:mid]
     r = array[mid:]
-    print("left", l)
-    print("right", r)
+    print("left", l)  # print every left array after sorting and merging
+    print("right", r)  # print every right array after sorting and merging
     left = merge_sort(l)
-    print(left)
+    print("left element", left)
     right = merge_sort(r)
-    print(right)
+    print("right element", right)
 
     return merge(left, right)
 
 
-def merge(left, right):
-    result = []
+def merge(left, right):  # will return sorted list
+    result = []  # empty list
     left_index = right_index = 0
 
-    while left_index < len(left) and right_index < len(right):
+    while left_index < len(left) and right_index < len(right):  # length should be greater than 0
 
         if left[left_index] < right[right_index]:
 
-            result.append(left[left_index])
-            left_index += 1
+            result.append(left[left_index])  # compare 1 item from left and 1 from right list
+            left_index += 1  # if right item is greater then append it to result and increment index of left
 
         else:
 
-            result.append(right[right_index])
-            right_index += 1
+            result.append(right[right_index])  # if left is greater then append to result
+            right_index += 1  # increment index
 
-    result.extend(left[left_index:])
+    result.extend(left[left_index:])  # it will merge the list and at the same time inserts multiple element in list
     result.extend(right[right_index:])
 
     return result
@@ -711,14 +717,14 @@ def c_to_f(c):
 # SQUARE ROOT OF NUMBER
 def sqr_num(c):
     t = c
-    epsilon = 1e-15
-    while abs(t - c / t) > epsilon * t:
+    epsilon = 1e-15  # calculate epsilon value
+    while abs(t - c / t) > epsilon * t:  # abc will return absolute value
         t = (c / t + t) / 2.0
     print("Square Root : ", t)
 
 
 # MONTHLY PAYMENT
-def monthly_pay(p, y, r):
+def monthly_pay(p, y, r):  # logic to calculate monthly payment
     total_months = 12 * y
     m_rate = r / (12 * 100)
     payment = p * m_rate / 1 - (1 + m_rate) ** (-total_months)
@@ -730,7 +736,7 @@ def monthly_pay(p, y, r):
 def day_week(day, months, year):
     year = int(year)
 
-    month = {
+    month = {  # dictionary for month
         1: "January",
         2: "February",
         3: "March",
@@ -745,7 +751,7 @@ def day_week(day, months, year):
         12: "December",
     }
 
-    days = {
+    days = {  # dictionary for week days
         0: "Sunday",
         1: "Monday",
         2: "Tuesday",
@@ -755,13 +761,12 @@ def day_week(day, months, year):
         6: "Saturday",
     }
 
-    print(day, month.get(months), year)
-
     year1 = year - (14 - months) // 12
     x = year1 + year1 // 4 - year1 // 100 + year1 // 400
     month1 = months + 12 * ((14 - months) // 12) - 2
-    date1 = (day + x + 31 * month1 // 12) % 7
-    print(date1, " : ", days.get(date1))
+    d = (day + x + 31 * month1 // 12) % 7
+    print(d, " : ", days.get(d))  # get value of d from days dictionary
+    print(day, month.get(months), year)  # get value of month from month dictionary
 
 
 # CONVERT TO BINARY
@@ -784,30 +789,30 @@ def convert_binary(n):
 # BINARY TO DECIMAL
 
 def decimal_convert(m):
-    b = convert_binary(m)
+    b = convert_binary(m)  # call return value of binary function and store
     print("old binary", b)
 
     b = str(b)
-    lef = b[0:4]
+    lef = b[0:4]  # partition the output in 4 bits
     r = b[4:8]
     print("l ", lef, "r ", r)
 
-    temp = lef
+    temp = lef  # swaping
     lef = r
     r = temp
     print("l ", lef, "r ", r)
-    new_number = lef + r
+    new_number = lef + r  # concatenate numbers
     print("new binary: ", new_number)
     new_decimal = int(new_number, 2)
     print("new decimal number is : ", new_decimal)
-    if num_power(new_decimal):
+    if num_power(new_decimal):  # checking whether number is power of two
         print("power of 2")
     else:
         print("not power of 2")
 
 
-def num_power(x):
-    if x == 0:
+def num_power(x):  # logic to check whether number is power of two or not
+    if x == 0:  # method will return true or false
         return False
     while x != 1:
         if x % 2 != 0:
@@ -815,8 +820,3 @@ def num_power(x):
         x = x // 2
 
     return True
-
-
-
-
-

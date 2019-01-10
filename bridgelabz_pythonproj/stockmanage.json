@@ -32,12 +32,12 @@
     },
     {
       "Stock Name": "Apple",
-      "Number of Share": 17,
+      "Number of Share": 10,
       "Share Price": 2000
     },
     {
       "Stock Name": "FVGH",
-      "Number of Share": 6,
+      "Number of Share": 4,
       "Share Price": "2323"
     }
   ]

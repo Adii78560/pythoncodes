@@ -2,65 +2,66 @@
 this is basic code for creating Node and queue in which nodes stores values. enqueue is used to
 add elements. dequeue use to remove element. Size will give size of linked list. show is used to
 display linked list
+
+similarly stack operations are performed using push, pop , size etc
 '''
 
 
 class Node:
 
-    def __init__(self, data, next=None):
-        self.data = data
+    def __init__(self, data, next=None):          # constructor for node
+        self.data = data                          # initiate next to none for now
         self.next = next
 
 
-class Queue:
+class Queue:                  # queue have front and rear node so initiate front and rear
     front = None
     rear = None
 
-    def __init__(self):
+    def __init__(self):        # constructor
 
         pass
 
-    def enqueue(self, data):
+    def enqueue(self, data):      # for adding data to queue
 
-        node = Node(data)
+        node = Node(data)      # node object which stores data
 
-        if self.front == None and self.rear == None:
+        if self.front == None and self.rear == None:   # for empty queue
 
             self.front = node
             self.rear = node
 
-        else:
+        else:              # queue containing elements
 
-            self.rear.next = node
+            self.rear.next = node      # set rear to next and current node will point next
             self.rear = self.rear.next
 
-    def show(self):
+    def show(self):   # display queue
 
-        if self.front == None:
+        if self.front == None:        # if queue is empty then display message
             print("Linked List  is empty")
             return
 
-        while self.front.next != None:
+        while self.front.next != None:     # if queue is not empty
             print(self.front.data)
             self.front = self.front.next
 
         print(self.front.data)
 
-    def dequeue(self):
+    def dequeue(self):        # remove elements from queue
 
-        temp = self.front
+        temp = self.front      # works as 1st entered element will get remove 1st
         self.front = self.front.next
         return temp.data
 
-    def is_empty(self):
-
+    def is_empty(self):       # check whether queue is empty or not
         if self.front == None:
-            return True
+            return True           # method will return boolean value true or false
         else:
             return False
 
-    def size(self):
-
+    def size(self):             # size of queue by traversing every node
+                                # method will return size
         size = 1
         traverse = self.front
         if self.front == None:
@@ -72,7 +73,7 @@ class Queue:
         return size
 
 
-queue = Queue()
+queue = Queue()           # object of queue
 
 
 class Stack:  # create stack
@@ -164,5 +165,5 @@ class Stack:  # create stack
             return False
 
 
-stack = Stack()
+stack = Stack()   # objects of stack
 stack1 = Stack()

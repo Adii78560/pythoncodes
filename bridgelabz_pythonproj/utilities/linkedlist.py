@@ -1,48 +1,48 @@
 class Node:
     def __init__(self, data=None):
         self.data = data  # data node
-        self.next = None  # last element of list will alwasys has none .
+        self.next = None  # last element of list initialise to none as it is always store null value.
         self.next_node = next
 
-    def get_data(self):  # gets the data of node
+    def get_data(self):  # get data of node
         return self.data
 
-    def get_next(self):  # gets next node
+    def get_next(self):  # get next node
         return self.next
 
-    def set_next(self, new_next):  # used while deleting: sets the next element to other next node.
+    def set_next(self, new_next):  # sets the next element to  next node.
         self.next = new_next
 
 
-class LinkedList:  # wrapper class for node class. user will never interface with node
+class LinkedList:  # wrapper class for node class
     def __init__(self):
-        self.head = Node()  # never gonna contain any actual data.  simply used as placeholder to
+        self.head = Node()
         # allow us to point to first node.
 
     def add(self, data):  # appends  element to list
         new_node = Node(data)  # creates a new node using class node .
-        current = self.head  # point to start iteration from ... first node
+        current = self.head  # point to first node
         while current.next is not None:  # while next element  is not Null
-            current = current.next  # sets the current node to next node
-        current.next = new_node  # create  the new node after current node
+            current = current.next  # set the current node to next node
+        current.next = new_node  # create the new node after current
 
     def length(self):  # calculates length of list
-        current = self.head  # at start nodes starts from Head
-        total = 0  # variable to count the nodes.
+        current = self.head
+        total = 0
 
-        while current:  # while current = True
+        while current:  # for current node
             total += 1  # incrementing total.
-            current = current.get_next()  # current element = next element until loop finishes
+            current = current.get_next()
         return total
 
     def display(self):  # to display list
 
-        elements = []  # list for display
-        current_node = self.head  # Set current node to starting node. i.e. HEAD
-        while current_node.next is not None:  # Traversing to last node i.e. till end(None)
-            current_node = current_node.next
+        elements = []  # create empty list to display
+        current_node = self.head  # Set current node to head
+        while current_node.next is not None:
+            current_node = current_node.next  # sore next to current
             elements.append(current_node.data)  # Appending to elements list
-        # print('data in linked list ', elements)
+
         return elements
 
 

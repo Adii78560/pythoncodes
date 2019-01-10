@@ -1,82 +1,92 @@
 from tkinter import *
 import json
-root = Tk()
-root.geometry('500x500')
 
 
-def store():
-    f_name = entry_1.get("1.0","end-1c")
-    l_name = entry_2.get("1.0","end-1c")
-    a = entry_3.get("1.0","end-1c")
-    c = entry_4.get("1.0","end-1c")
-    s = entry_5.get("1.0","end-1c")
-    z = entry_6.get("1.0","end-1c")
-    p = entry_7.get("1.0","end-1c")
+# def filemenus():
+#     pass
+#
+#
+# def add():
+#     pass
 
-    print(f_name,l_name,a,c,s,z,p)
+
+def find():
     with open('/home/admin1/bridgelabz_pythonproj/address.json', 'r') as f:
-        strr = f.read()  # open and read file
-        obj = json.loads(strr)  # read json file like object and parse to string
-
-    with open('/home/admin1/bridgelabz_pythonproj/address.json', 'w') as f:
-        obj['address details'].append({  # open file in write mode and append values
-            "first name": f_name,
-            "last name": l_name,
-            "address": a,
-            "city": c,
-            "state": s,
-            "zip code": z,
-            "phone no": p
-        })
-        f.write(json.dumps(obj, indent=2))  # json object to string
-        f.close()
+        a = f.read()
+        o = json.loads(a)
+        for i in o['address details']:
+            nameorder.insert(0, i['first name'] + " " + i['last name'] + "\n")
 
 
-label_0 = Label(root, text="address book form", width=20, font=("bold", 20))
-label_0.place(x=90, y=53)
+# def searching():
+#     with open('/home/admin1/bridgelabz_pythonproj/address.json', 'r') as f:
+#         a = f.read()
+#         o = json.loads(a)
+#
+#         #print(r)
+#         for i in o['address details']:
+#
+#             r = nameorder.curselection()
+#             print(r)
+#             # if r == i['first name']:
+#             #     detail.insert(INSERT, i['first name'] + " " + i['last name'] + "\n" + i['address'] + " " + i['city'])
 
-label_1 = Label(root, text="first name", width=20, font=("bold", 10))
-label_1.place(x=80, y=130)
 
-entry_1 = Text(root, height=2, width=50)
-entry_1.place(x=240, y=130)
+root = Tk()
+topframe = Frame(root)
+topframe.pack()
 
-label_2 = Label(root, text="last name", width=20, font=("bold", 10))
-label_2.place(x=68, y=180)
+middleframe = Frame(root)
+middleframe.pack()
+lable = Label(middleframe, text='hello')
+lable.pack()
+nameorder = Listbox(middleframe)
+nameorder.pack()
 
-entry_2 = Text(root, height=2, width=50)
-entry_2.place(x=240, y=180)
 
-label_3 = Label(root, text="address", width=20, font=("bold", 10))
-label_3.place(x=70, y=230)
+# detail = Label(middleframe)
+# detail.pack()
 
-entry_3 = Text(root, height=2, width=50)
-entry_3.place(x=240, y=230)
+# addadrb = Button(middleframe, text="add address", command=addadr())
+# addadrb.pack()
+bottomframe = Frame(root)
+bottomframe.pack(side=BOTTOM)
+findb = Label(middleframe, text='address')
+find()
+findb.pack()
 
-label_4 = Label(root, text="city", width=20, font=("bold", 10))
-label_4.place(x=70, y=280)
 
-entry_4 = Text(root, height=2, width=50)
-entry_4.place(x=240, y=280)
+sel = nameorder.curselection()
+nameorder.config(text=str(sel))
 
-label_5 = Label(root, text="state", width=20, font=("bold", 10))
-label_5.place(x=85, y=330)
 
-entry_5 = Text(root, height=2, width=50)
-entry_5.place(x=240, y=330)
+detail = Label(middleframe,height=10,width = 20)
 
-label_6 = Label(root, text="zip code", width=20, font=("bold", 10))
-label_6.place(x=85, y=380)
+detail.pack()
+#searching()
+addb = Button(bottomframe, text='add')
+addb.grid(row=5, column=0)
 
-entry_6 = Text(root, height=2, width=50)
-entry_6.place(x=240, y=380)
+editb = Button(bottomframe, text='edit')
+editb.grid(row=5, column=2)
 
-label_7 = Label(root, text="phone number", width=20, font=("bold", 10))
-label_7.place(x=85, y=430)
+deleteb = Button(bottomframe, text='delete')
+deleteb.grid(row=5, column=4)
 
-entry_7 = Text(root, height=2, width=50)
-entry_7.place(x=240, y=430)
+sortbylnameb = Button(bottomframe, text='sort by last name')
+sortbylnameb.grid(row=5, column=6)
 
-Button(root, text='submit',width=20,bg='brown',fg='white', command = lambda : store()).place(x=240,y=480)
+sortbyzipb = Button(bottomframe, text='sort by zip')
+sortbyzipb.grid(row=5, column=8)
 
+menubar = Menu(root)
+filemenu = Menu(menubar, tearoff=5)
+filemenu.add_command(label="new")
+filemenu.add_command(label="open")
+filemenu.add_command(label="save")
+filemenu.add_command(label="save as")
+filemenu.add_separator()
+filemenu.add_command(label="quit")
+menubar.add_cascade(label="File")
+root.config(menu=menubar)
 root.mainloop()

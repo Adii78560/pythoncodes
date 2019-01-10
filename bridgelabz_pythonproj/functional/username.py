@@ -14,5 +14,4 @@
 from utilities import utility
 
 username = input("enter username: ")  # take username from user to replace with <<username>>
-
 utility.username_change(username)

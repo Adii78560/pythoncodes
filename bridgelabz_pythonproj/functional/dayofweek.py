@@ -11,13 +11,14 @@
 *
 ***********************************************************************************/
 '''
+
 from utilities import utility
 day = int(input("enter day: "))
-if 0 < day < 32:
+if 0 < day < 32:                 # day must be between 1 to 31
     months = int(input("enter month: "))
-    if 0 < months < 13:
+    if 0 < months < 13:          # month between 1 - 12
         year = input("enter year: ")
-        if len(year) == 4:
+        if len(year) == 4:        # length should be 4 for year
             utility.day_week(day, months, year)
         else:
             print("invalid year")

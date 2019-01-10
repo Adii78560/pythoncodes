@@ -14,6 +14,6 @@ from functional import primeanagram
 l = primeanagram.c.a_list
 for i in l:
     datastructqueue.stack.push(i)  # push ith element to stack
-print("stack ...")
+print("\n \n stack ...\n")
 for i in range(0, datastructqueue.stack.size()):
     print(datastructqueue.stack.pop(), end=" ")   # print pop elements

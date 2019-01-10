@@ -61,10 +61,10 @@ class Prime:
             ''')
         print(self.a)
 
-    def non_anag(self):
+    def non_anag(self):   # numbers which are not anagram
         self.a_list = list(self.a)
         self.not_anagram = []
-        for self.i in self.prime_list:
+        for self.i in self.prime_list:    # print elements which are in prime list but not in anagram list
             if self.i not in self.a_list:
                 self.not_anagram.append(self.i)
         # print(not_anagram)

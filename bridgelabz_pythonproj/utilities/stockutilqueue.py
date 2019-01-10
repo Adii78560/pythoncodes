@@ -5,9 +5,6 @@ from utilities import datastructqueue
 
 class Stocks:
     def __init__(self):  # constructor for stocks
-        # with open('/home/admin1/bridgelabz_pythonproj/stockmanage.json', 'r') as f:
-        #     self.sl = f.read()
-        #     self.objj = json.loads(self.sl)
         pass
 
     def sell(self):  # sell method
@@ -30,10 +27,10 @@ class Stocks:
 
         date_timee = datetime.datetime.today()  # current date time
 
-        # push data to stack
-        datastructqueue.stack.push("\n" + "sell " + sname + " " + str(date_timee))
+        # enter data to queue
+        datastructqueue.queue.enqueue("\n" + "sell " + sname + " " + str(date_timee))
 
-        with open("/home/admin1/bridgelabz_pythonproj/stockrecords.txt", "a") as file:
+        with open("/home/admin1/bridgelabz_pythonproj/stockqueue.txt", "a") as file:
             file.write("\n" + "sell " + sname + " " + str(date_timee))
 
     def buy(self):  # buy shares
@@ -41,6 +38,7 @@ class Stocks:
             s = f.read()
             obj = json.loads(s)
             print(" name     number of share     price")
+
             for n in obj['Stock Report']:  # display details
                 print(n['Stock Name'], " ", n['Number of Share'], " ", n['Share Price'])
         sname = input("enter stock name ")
@@ -57,12 +55,11 @@ class Stocks:
                     strr = f.read()
                     o = json.loads(strr)  # update the amount in users account
                 name = input("confirm name ")
+
                 for p in o['details']:
                     if p['name'] == name:
                         p['amount'] = int(p['amount']) - total
-                        if p['amount'] <= 0:  # if account balance is 0 then user is noy=t allowed to buy
-                            print("error")
-                            break
+
 
                 with open('/home/admin1/bridgelabz_pythonproj/persondetail.json', 'w') as f:
 
@@ -71,9 +68,9 @@ class Stocks:
 
         date_time = datetime.datetime.today()
 
-        datastructqueue.stack.push("buy " + sname + " " + str(self.no) + " " + str(date_time))
+        datastructqueue.queue.enqueue("\n"+"buy " + sname + " " + str(self.no) + " " + str(date_time))
 
-        with open("/home/admin1/bridgelabz_pythonproj/stockrecords.txt", "a") as file:
+        with open("/home/admin1/bridgelabz_pythonproj/stockqueue.txt", "a") as file:
             file.write("buy " + sname + " " + str(self.no) + " " + str(date_time))
 
     def add(self):  # add new share

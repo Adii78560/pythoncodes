@@ -35,6 +35,16 @@ def order():
     print("what to add:")
 
     i = input("rice or pulse or wheat")
+    try:
+        if i == 'rice' or i == 'pulse' or i == 'wheat':
+            pass
+        else:
+            raise ValueError
+    except ValueError:
+        print("invalid input")
+        exit()
+
+
     item_name = input("item name")
     price = int(input("price"))
     quantity = int(input("quantity"))
@@ -42,6 +52,7 @@ def order():
     with open('/home/admin1/bridgelabz_pythonproj/samplejson.json', 'r') as f:
         str = f.read()      # open and read file
         obj = json.loads(str)      # read json file like object and parse to string
+
 
     with open('/home/admin1/bridgelabz_pythonproj/samplejson.json', 'w') as f:
         obj[i].append({               # open file in write mode and append values
