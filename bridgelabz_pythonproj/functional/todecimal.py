@@ -12,8 +12,15 @@
 *
 ***********************************************************************************/
 '''
-from utilities import utility
+from utilities.utility import Util
 
-m = int(input("enter the number to see its binary representation: "))
 
-utility.decimal_convert(m)
+def decm():
+    u = Util()
+    m = int(input("enter the number to see its binary representation: "))
+
+    u.decimal_convert(m)
+
+
+if __name__ == "__main__":
+    decm()

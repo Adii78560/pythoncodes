@@ -11,6 +11,14 @@
 *
 ***********************************************************************************/
 '''
-from utilities import utility
-n = int(input("number of times to flip coin: "))    # number of times user want to flip coin
-utility.flips(n)
+from utilities.utility import Util
+
+
+def coin():
+    u = Util
+    n = int(input("number of times to flip coin: "))  # number of times user want to flip coin
+    u.flips(n)
+
+
+if __name__ == "__main__":
+    coin()

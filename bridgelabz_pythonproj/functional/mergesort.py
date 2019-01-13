@@ -10,25 +10,18 @@
 ***********************************************************************************/
 '''
 
-
-from utilities import utility
+from utilities.utility import Util
 
 array = [5, 4, 3, 2, 1]
 
-print("unsorted: ",array)
 
-result = utility.merge_sort(array)
-print("sorted: ",result)
+def sorting():
+    u = Util()
+    print("unsorted: ", array)
 
-
-
-
-
+    result = u.merge_sort(array)
+    print("sorted: ", result)
 
 
-
-
-
-
-
-
+if __name__ == "__main__":
+    sorting()

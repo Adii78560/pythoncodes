@@ -11,8 +11,16 @@
 *
 ***********************************************************************************/
 '''
-from utilities import utility
+from utilities.utility import Util
 
-c = int(input("take a number of which sqrt is to be calculate: "))
 
-utility.sqr_num(c)
+def sqr():
+    u = Util()
+
+    c = int(input("take a number of which sqrt is to be calculate: "))
+
+    u.sqr_num(c)
+
+
+if __name__ == "__main__":
+    sqr()

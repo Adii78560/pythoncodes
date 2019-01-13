@@ -9,7 +9,14 @@
 *
 ***********************************************************************************/
 '''
-from utilities import utility
+from utilities.utility import Util
 
-amount = int(input("enter amount: "))   # ask user to enter amount
-utility.vending(amount)
+
+def vending():
+    u = Util()
+    amount = int(input("enter amount: "))   # ask user to enter amount
+    u.vending(amount)
+
+
+if __name__ == "__main__":
+    vending()

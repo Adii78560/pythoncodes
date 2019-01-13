@@ -9,11 +9,18 @@
 *
 ***********************************************************************************/
 '''
-from utilities import utility
+from utilities.utility import Util
 
-n = int(input("enter number of questions: "))
 
-k = (2**n)-1
-print("think of a integer between 0 to ",k)
+def power():
+    u = Util()
+    n = int(input("enter number of questions: "))
 
-utility.guess(0,k)
+    k = (2**n)-1
+    print("think of a integer between 0 to ",k)
+
+    u.guess(0,k)
+
+
+if __name__ == "__main__":
+    power()

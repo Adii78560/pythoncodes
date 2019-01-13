@@ -10,9 +10,12 @@
 ***********************************************************************************/
 '''
 
-from utilities import utility
 
-utility.prime_numbers()
+from utilities.utility import Util
+if __name__ == "__main__":
+    u = Util()
+
+    u.prime_numbers()
 
 
 

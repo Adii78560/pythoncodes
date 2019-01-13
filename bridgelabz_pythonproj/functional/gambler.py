@@ -13,13 +13,16 @@
 ***********************************************************************************/
 '''
 
-
-from utilities import utility
-
-stake = int(input("enter stake: "))     # take starting amount as stake
-goal = int(input("enter goal: "))       # take final amount to win
-turns = int(input("enter number of trials: "))  # number of trials
+from utilities.utility import Util
 
 
-utility.gambler_game(stake, goal, turns)
+def gameb():
+    u = Util()
+    stake = int(input("enter stake: "))  # take starting amount as stake
+    goal = int(input("enter goal: "))  # take final amount to win
+    turns = int(input("enter number of trials: "))  # number of trials
+    u.gambler_game(stake, goal, turns)
 
+
+if __name__ == "__main__":
+    gameb()

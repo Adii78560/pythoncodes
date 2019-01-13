@@ -10,8 +10,19 @@
 *
 ***********************************************************************************/
 '''
-from utilities import utility
-a = [int(x) for x in input("enter list elements: ").split( )]
-print(a)
-n = len(a)
-utility.dist_triples(a, n)
+from utilities.utility import Util
+
+
+def triples():
+    try:
+        u = Util()
+        a = [int(x) for x in input("enter list elements: ").split()]
+        print(a)
+        n = len(a)
+        u.dist_triples(a, n)
+    except ValueError:
+        print("input should be separated by space")
+
+
+if __name__ == "__main__":
+    triples()

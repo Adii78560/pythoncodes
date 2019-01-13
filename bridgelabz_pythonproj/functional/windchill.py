@@ -11,11 +11,17 @@
 ***********************************************************************************/
 '''
 
+from utilities.utility import Util
 
-from utilities import utility
 
-t = int(input("enter value for t: "))
-v = int(input("enter value for v: "))
+def wind():
+    u = Util()
 
-utility.win(t, v)
+    t = int(input("enter value for t: "))
+    v = int(input("enter value for v: "))
 
+    u.win(t, v)
+
+
+if __name__ == "__main__":
+    wind()

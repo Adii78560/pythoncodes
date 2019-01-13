@@ -11,12 +11,17 @@
 ***********************************************************************************/
 '''
 
-
-from utilities import utility
-
-n = int(input("enter number of rows: "))      # take number of rows and columns fom user
-m = int(input("enter number of columns: "))
+from utilities.utility import Util
 
 
-utility.arrays(n, m)
+def arr():
+    u = Util()
 
+    n = int(input("enter number of rows: "))  # take number of rows and columns fom user
+    m = int(input("enter number of columns: "))
+
+    u.arrays(n, m)
+
+
+if __name__ == "__main__":
+    arr()

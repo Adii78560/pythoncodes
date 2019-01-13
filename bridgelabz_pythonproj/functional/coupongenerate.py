@@ -10,11 +10,16 @@
 ***********************************************************************************/
 '''
 
-
-from utilities import utility
-
-coupon_number = int(input("enter coupon number: "))  # take input for coupon number
+from utilities.utility import Util
 
 
-utility.coupon(coupon_number)
+def cop():
+    u = Util()
 
+    coupon_number = int(input("enter coupon number: "))  # take input for coupon number
+
+    u.coupon(coupon_number)
+
+
+if __name__ == "__main__":
+    cop()

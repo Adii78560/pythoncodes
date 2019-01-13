@@ -10,9 +10,15 @@
 ***********************************************************************************/
 '''
 
-from utilities import utility
-data = input("enter string: ")    # enter string for permutation
-print(utility.permutation_py(data))
+from utilities.utility import Util
 
-#utility.permutation_py(data)
-#print(utility.permutationpy(''))
+
+def permutation():
+    u = Util()
+    data = input("enter string: ")    # enter string for permutation
+    print(u.permutation_py(data))
+
+
+if __name__ == "__main__":
+    permutation()
+

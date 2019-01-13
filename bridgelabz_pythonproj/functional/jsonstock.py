@@ -59,12 +59,12 @@ stock = """
 data = json.loads(stock)  # take data from data using loads i.e. load string
 
 # print(data)
-with open('/home/admin1/bridgelabz_pythonproj/stock.json', '+w') as outfile:  # stores data in json file
+with open('../stock.json', '+w') as outfile:  # stores data in json file
     json.dump(data, outfile, indent=2)  # indent for cascade format which add spaces
 
 
 def stock():
-    with open('/home/admin1/bridgelabz_pythonproj/stock.json', 'r') as f:  # read file
+    with open('../stock.json', 'r') as f:  # read file
         new = json.load(f)  # load data from file
     l = []
     for w in new["reliance"]:  # take only names and price for wheat

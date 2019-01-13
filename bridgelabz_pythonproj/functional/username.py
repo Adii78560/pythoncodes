@@ -11,7 +11,14 @@
 *
 ***********************************************************************************/
 '''
-from utilities import utility
+from utilities.utility import Util
 
-username = input("enter username: ")  # take username from user to replace with <<username>>
-utility.username_change(username)
+
+def user():
+    u = Util
+    username = input("enter username: ")  # take username from user to replace with <<username>>
+    u.username_change(username)
+
+
+if __name__ == "__main__":
+    user()

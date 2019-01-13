@@ -12,10 +12,16 @@
 ***********************************************************************************/
 '''
 
-from utilities import utility
-x = int(input("enter x co ordinate: "))   # take (x,y) input
-y = int(input("enter y co ordinate: "))
+from utilities.utility import Util
 
 
-utility.distance(x,y)
+def dist():
+    u = Util()
+    x = int(input("enter x co ordinate: "))  # take (x,y) input
+    y = int(input("enter y co ordinate: "))
 
+    u.distance(x, y)
+
+
+if __name__ == "__main__":
+    dist()

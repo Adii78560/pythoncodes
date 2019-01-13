@@ -10,14 +10,20 @@
 ***********************************************************************************/
 '''
 
-from utilities import utility
+from utilities.utility import Util
 
 
-stringlist = list(input("enter elements for list(only string): ").split(" "))
-utility.userstring(stringlist)
+def sorting():
+    u = Util()
+    try:
+        stringlist = list(input("enter elements for list(only string): ").split(" "))
+        u.userstring(stringlist)
+    except ValueError:
+        print("only strings")
 
 
-
+if __name__ == "__main__":
+    sorting()
 
 
 

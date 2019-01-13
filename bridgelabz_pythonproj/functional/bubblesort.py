@@ -10,16 +10,24 @@
 ***********************************************************************************/
 '''
 
-from utilities import utility
-try:
-    intlist = list(input("Enter elements separated by spaces").split(" "))
-    intlist = [int(x) for x in intlist]
-
-except ValueError:
-    print("only int")
+from utilities.utility import Util
 
 
-utility.userint(intlist)
+def sorting():
+    u = Util()
+    try:
+        intlist = list(input("Enter elements separated by spaces").split(" "))
+        intlist = [int(x) for x in intlist]
+
+    except ValueError:
+        print("only int")
+
+    u.userint(intlist)
+
+
+if __name__ == "__main__":
+    sorting()
+
 
 
 

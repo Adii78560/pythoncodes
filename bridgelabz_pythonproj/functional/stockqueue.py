@@ -37,5 +37,6 @@ def stock():
     except ValueError:
         print("only int")
 
+
 if __name__ == "__main__":
     stock()

@@ -11,10 +11,18 @@
 *
 ***********************************************************************************/
 '''
-from utilities import utility
+from utilities.utility import Util
 
-n = int(input("enter the number to see its binary representation: "))
 
-utility.convert_binary(n)
+def binary():
+    u = Util()
 
-print(utility.convert_binary(n))
+    n = int(input("enter the number to see its binary representation: "))
+
+    u.convert_binary(n)
+
+    print(u.convert_binary(n))
+
+
+if __name__ == "__main__":
+    binary()

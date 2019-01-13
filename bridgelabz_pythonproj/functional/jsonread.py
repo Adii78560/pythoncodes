@@ -15,7 +15,7 @@ import json
 
 
 def order():
-    with open('/home/admin1/bridgelabz_pythonproj/samplejson.json', ) as f:
+    with open('../samplejson.json', ) as f:
         data = json.load(f)   # load data from json file
 
         print("Available items in our grocery store:")
@@ -44,17 +44,15 @@ def order():
         print("invalid input")
         exit()
 
-
     item_name = input("item name")
     price = int(input("price"))
     quantity = int(input("quantity"))
 
-    with open('/home/admin1/bridgelabz_pythonproj/samplejson.json', 'r') as f:
-        str = f.read()      # open and read file
-        obj = json.loads(str)      # read json file like object and parse to string
+    with open('../samplejson.json', 'r') as f:
+        strr = f.read()      # open and read file
+        obj = json.loads(strr)      # read json file like object and parse to string
 
-
-    with open('/home/admin1/bridgelabz_pythonproj/samplejson.json', 'w') as f:
+    with open('../samplejson.json', 'w') as f:
         obj[i].append({               # open file in write mode and append values
             "name": item_name,
             "price": price,
@@ -62,6 +60,7 @@ def order():
         })
         f.write(json.dumps(obj, indent=2))        # json object to string
         f.close()
+
 
 order()
 

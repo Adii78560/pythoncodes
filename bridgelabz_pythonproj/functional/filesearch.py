@@ -10,15 +10,19 @@
 ***********************************************************************************/
 '''
 
-from utilities import utility
-
-filename = "/home/admin1/bridgelabz_pythonproj/sample.txt"
+from utilities.utility import Util
 
 
-with open(filename) as f:
-     list_file = f.read().split(",")
-     list_file[-1]=list_file[-1].strip()
+def search():
+    u = Util()
+    filename = "../sample.txt"
+
+    with open(filename) as f:
+        list_file = f.read().split(",")
+        list_file[-1] = list_file[-1].strip()
+
+    u.filesearching(list_file)
 
 
-utility.filesearching(list_file)
-
+if __name__ == "__main__":
+    search()

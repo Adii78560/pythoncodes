@@ -10,11 +10,16 @@
 ***********************************************************************************/
 '''
 
-
-from utilities import utility
-
-num = int(input("enter number for factorization: "))
+from utilities.utility import Util
 
 
-utility.prime(num)
+def primen():
+    u = Util()
 
+    num = int(input("enter number for factorization: "))
+
+    u.prime(num)
+
+
+if __name__ == "__main__":
+    primen()

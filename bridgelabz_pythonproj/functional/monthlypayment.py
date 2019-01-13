@@ -13,10 +13,17 @@
 *
 ***********************************************************************************/
 '''
-from utilities import utility
+from utilities.utility import Util
 
-p = int(input("enter principal loan amount p: "))
-y = int(input("enter years y: "))
-r = int(input("enter rate r: "))
 
-utility.monthly_pay(p, y, r)
+def pay():
+    u = Util()
+    p = int(input("enter principal loan amount p: "))
+    y = int(input("enter years y: "))
+    r = int(input("enter rate r: "))
+
+    u.monthly_pay(p, y, r)
+
+
+if __name__ == "__main__":
+    pay()

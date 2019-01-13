@@ -12,7 +12,14 @@
 '''
 
 
-from utilities import utility
+from utilities.utility import Util
 
-start_value = int(input("enter 1 to start: "))   # to start stopwatch
-utility.stopwatch(start_value)
+
+def timers():
+    u = Util()
+    start_value = int(input("enter 1 to start: "))   # to start stopwatch
+    u.stopwatch(start_value)
+
+
+if __name__ == "__main__":
+    timers()

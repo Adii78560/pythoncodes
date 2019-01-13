@@ -11,9 +11,10 @@
 '''
 from utilities import datastructqueue
 from functional import primeanagram
-l = primeanagram.c.a_list
-for i in l:
-    datastructqueue.queue.enqueue(i)  # push ith element to queue
-print("queue ...")
-for i in range(0, datastructqueue.queue.size()):
-    print(datastructqueue.queue.dequeue(), end=" ")   # print pop elements
+if __name__ == "__main__":
+    l = primeanagram.c.a_list
+    for i in l:
+        datastructqueue.queue.enqueue(i)  # push ith element to queue
+    print("queue ...")
+    for i in range(0, datastructqueue.queue.size()):
+        print(datastructqueue.queue.dequeue(), end=" ")   # print pop elements

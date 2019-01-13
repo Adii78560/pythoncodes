@@ -10,9 +10,10 @@
 ***********************************************************************************/
 '''
 
-from utilities import utility
-
-utility.check_condition()
+from utilities.utility import Util
+if __name__ == "__main__":
+    u = Util()
+    u.check_condition()
 
 
 

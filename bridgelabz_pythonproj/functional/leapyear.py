@@ -10,6 +10,14 @@
 *
 ***********************************************************************************/
 '''
-from utilities import utility
-year = input("enter year: ")   # ask user to enter year to check year is leap year or not
-utility.check_leap(year)
+from utilities.utility import Util
+
+
+def leapy():
+    u = Util
+    year = input("enter year: ")  # ask user to enter year to check year is leap year or not
+    u.check_leap(year)
+
+
+if __name__ == "__main__":
+    leapy()

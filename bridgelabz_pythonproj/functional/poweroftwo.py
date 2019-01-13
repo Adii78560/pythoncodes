@@ -10,6 +10,14 @@
 *
 ***********************************************************************************/
 '''
-from utilities import utility
-N = int(input("enter power value N: "))  # take power value from user i.e if 2^N then ask for N
-utility.power_two(N)
+from utilities.utility import Util
+
+
+def power():
+    u = Util()
+    n = int(input("enter power value N: "))  # take power value from user i.e if 2^N then ask for N
+    u.power_two(n)
+
+
+if __name__ == "__main__":
+    power()

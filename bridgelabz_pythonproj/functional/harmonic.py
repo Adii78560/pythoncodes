@@ -10,15 +10,21 @@
 ***********************************************************************************/
 '''
 
-from utilities import utility
-
-try:  # handle error if user input is 0
-    N = int(input("enter harmonic value N: "))
-    if N != 0:  # checking if N is not equal to 0
-        utility.harmonic_value(N)
-    else:
-        raise ZeroDivisionError  # number can not be divided by 0 hence raise exception to handle it
+from utilities.utility import Util
 
 
-except ZeroDivisionError:
-    print('Handling run-time error: N should not be zero')  # if user input is 0 then print this error
+def harmonic():
+    u = Util()
+    try:  # handle error if user input is 0
+        n = int(input("enter harmonic value N: "))
+        if n != 0:  # checking if N is not equal to 0
+            u.harmonic_value(n)
+        else:
+            raise ZeroDivisionError  # number can not be divided by 0 hence raise exception to handle it
+
+    except ZeroDivisionError:
+        print('Handling run-time error: N should not be zero')  # if user input is 0 then print this error
+
+
+if __name__ == "__main__":
+    harmonic()

@@ -11,11 +11,20 @@
 ***********************************************************************************/
 '''
 
-from utilities import utility
+from utilities.utility import Util
 
-str1 = input("enter string 1: ")
-str2 = input("enter string 2: ")
-utility.anagram_check(str1, str2)
+
+def ana():
+    u = Util()
+
+    str1 = input("enter string 1: ")
+    str2 = input("enter string 2: ")
+    u.anagram_check(str1, str2)
+
+
+if __name__ == "__main__":
+    ana()
+
 
 
 

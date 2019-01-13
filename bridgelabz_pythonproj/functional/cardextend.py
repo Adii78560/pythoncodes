@@ -37,8 +37,7 @@ class DeckOfCards:
                 random_no_suits = random.randint(0, 3)  # generates random number for suits.
                 cards_rank = cards_rank + ' ' + suits[random_no_suits]  # adds suit and Rank together.
 
-                if list_cards.__contains__(
-                        cards_rank) is False:  # if list of cards does not contains cards_rank already:
+                if cards_rank not in list_cards:  # if list of cards does not contains cards_rank already:
 
                     if len(list_cards) is not 36:
                         list_cards.append(cards_rank)  # append cards_rank to list of cards
