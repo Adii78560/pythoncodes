@@ -25,9 +25,9 @@ What chat room would you like to enter?<br/>
         };
     </script>
 {% else %}
-  <p>You are not logged in</p>
+  <H1>WELCOME TO CHAT APP</H1>
   <a href="{% url 'login' %}">login</a>
-
+<a href="{% url 'signup' %}">signup</a>
 
 {% endif %}
 {% endblock %}
