@@ -31,15 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'channels',
-    'chat',
+    'channels',   # channels
+    'chat',       # chat app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts.apps.AccountsConfig',
+    'accounts.apps.AccountsConfig',   # signup app
 ]
 
 MIDDLEWARE = [
@@ -71,9 +71,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'chatapplication.wsgi.application'
-ASGI_APPLICATION = 'chatapplication.routing.application'
+ASGI_APPLICATION = 'chatapplication.routing.application'  # async gateway interface
 
-CHANNEL_LAYERS = {
+CHANNEL_LAYERS = {              # redis channels layer
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
@@ -134,5 +134,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'home'  # after login url
+LOGOUT_REDIRECT_URL = 'home'  # after logout url

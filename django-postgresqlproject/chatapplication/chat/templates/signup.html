@@ -1,14 +1,15 @@
+<!-- templates/signup.html -->
+<!-- csrf tokens are used because of post methods -->
+
 {% extends 'base.html' %}
 
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
   <h2>Sign up</h2>
-<form>
-  < method="post">
+  <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Sign up</button><br>
-    
+    <button type="submit">Sign up</button>
   </form>
 {% endblock %}

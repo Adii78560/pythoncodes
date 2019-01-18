@@ -1,4 +1,13 @@
 <!-- chat/templates/chat/room.html -->
+
+<!-- first check user is logged in else tell user to log in or create account with sign in option -->
+
+<!-- display name of logged in user and current chat room name -->
+
+<!-- create a web socket url with ws or wss with room name  -->
+
+<!-- ws is non secured and wss is secured similar to http and https  -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +17,9 @@
 <body>
 {% block content %}
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
+<h3><b>Hi {{ user.username }}!</b></h3>
+<br> you are in room : {{room_name_json}}
+
   <p><a href="{% url 'logout' %}">logout</a></p>
     <textarea id="chat-log" cols="100" rows="20"></textarea><br/>
     <input id="chat-message-input" type="text" size="100"/><br/>
@@ -22,9 +33,11 @@
         '/ws/chat/' + roomName + '/');
 
     chatSocket.onmessage = function(e) {
+
         var data = JSON.parse(e.data);
         var message = data['message'];
-        document.querySelector('#chat-log').value += (message + '\n');
+        var user_name = data['username']
+        document.querySelector('#chat-log').value += (user_name +' : ' + message + '\n');
     };
 
     chatSocket.onclose = function(e) {
@@ -48,9 +61,11 @@
         messageInputDom.value = '';
     };
 </script>
+
 {% else %}
   <p>You are not logged in</p>
   <a href="{% url 'login' %}">login</a>
+<a href="{% url 'signup' %}">signup</a>
 {% endif %}
 {% endblock %}
 </html>
