@@ -1,0 +1,23 @@
+<center><div class="hgroup">
+    <center><h1>Create account</h1></center>
+    <form>
+        <div class="group">
+        <input type="text" name="username" ng-model="userName" required><span class="highlight"></span>
+        <label>Username</label></div>
+        
+        <div class="group">
+            <input type="text" name="email" ng-model="email" required><span class="highlight"></span>
+            <label>Email</label></div>
+        <div class="group">
+            <input type="password" name="password" ng-model="Password" required><span class="highlight"></span>
+        <label>Password</label></div>
+        <input type="submit" class="button buttonBlue" value="Create account" ng-click="register()">
+       
+    </form>
+    <h3>Already have account???</h3>
+    <a ui-sref="login">Login here</a>
+   
+        
+    
+</div>
+</center>

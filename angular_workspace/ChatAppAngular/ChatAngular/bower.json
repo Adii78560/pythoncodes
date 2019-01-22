@@ -1,0 +1,22 @@
+{
+  "name": "ChatAngular",
+  "homepage": "https://github.com/JanhaviUMhatre/pythoncodes",
+  "authors": [
+    "JanhaviUMhatre <jmhatregit@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^1.0.20",
+    "angular": "^1.7.6",
+    "jquery": "^3.3.1"
+  }
+}

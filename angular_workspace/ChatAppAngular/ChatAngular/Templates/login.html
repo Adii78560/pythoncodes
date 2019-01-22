@@ -1,0 +1,22 @@
+<center><div class="hgroup">
+    <center><h1>Login to your account</h1></center>
+    <form>
+        <div class="group">
+        <input type="text" name="username" ng-model="userName" required><span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Username</label></div>
+        <div class="group">
+        <input type="password" name="password" ng-model="Password" required><span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Password</label></div>
+        <input type="submit" class="button buttonBlue" value="login" ng-click="login()">
+        <div>
+                Hello, <span ng-bind="loginvalue"></span>
+              </div>    </form>
+    <h3>Don't have account???</h3>
+    <a ui-sref="register">Register here</a>
+    
+        
+    
+</div>
+</center>
