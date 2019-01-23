@@ -17,12 +17,12 @@ app.controller('login', function ($scope, userservices ,$state) {
             function successCallback(response) {
                 console.log("login successful ");
                 console.log(response.data);
-                 $state.go('dashboard');
+                 $state.go("http://127.0.0.1:8000/");
             },
             //execute in case of unsucessfull response
             function errorCallback(response) {
                 console.log("login unsuccessful ");
-                location.replace("http://localhost:8000/chat/1/")
+                //location.replace()
 
                 
             }
