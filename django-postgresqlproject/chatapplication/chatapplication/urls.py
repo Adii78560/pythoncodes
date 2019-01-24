@@ -10,6 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),   # localhost/admin
     path('accounts/', include('accounts.urls')),  # for signup
     path('accounts/', include('django.contrib.auth.urls')),   # for login
+    # path('accounts/', include('chat.urls')),
     path('chat/', include('chat.urls')),  # login and sign in page
     path('', TemplateView.as_view(template_name='home.html'), name='home'),  # home page after login
 
