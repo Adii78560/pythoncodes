@@ -1,0 +1,80 @@
+<!-- chat/templates/chat/room.html -->
+
+<!-- first check user is logged in else tell user to log in or create account with sign in option -->
+
+<!-- display name of logged in user and current chat room name -->
+
+<!-- create a web socket url with ws or wss with room name  -->
+
+<!-- ws is non secured and wss is secured similar to http and https  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8"/>
+    <title>Chat Room</title>
+</head>
+<body>
+{% block content %}
+{% if user.is_authenticated %}
+<h3><b>Hi {{ user.username }}!</b></h3>
+<br> you are in room : {{room_name_json}}
+
+
+  <p><a href="{% url 'logout' %}">logout</a></p>
+
+
+
+
+    <textarea id="chat-log" cols="100" rows="20"></textarea><br/>
+    <input id="chat-message-input" type="text" size="100"/><br/>
+    <input id="chat-message-submit" type="button" value="Send"/>
+</body>
+<script>
+    var roomName = {{ room_name_json }};
+
+
+    var chatSocket = new WebSocket(
+        'ws://' + window.location.host +
+        '/ws/chat/' + roomName + '/');
+
+    chatSocket.onmessage = function(e) {
+
+        var data = JSON.parse(e.data);
+        var message = data['message'];
+        var user_name = data['username']
+        document.querySelector('#chat-log').value += (user_name +' : ' + message + '\n');
+    };
+
+    chatSocket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
+
+
+    document.querySelector('#chat-message-input').focus();
+    document.querySelector('#chat-message-input').onkeyup = function(e) {
+        if (e.keyCode === 13) {  // enter, return
+            document.querySelector('#chat-message-submit').click();
+        }
+    };
+
+    document.querySelector('#chat-message-submit').onclick = function(e) {
+        var messageInputDom = document.querySelector('#chat-message-input');
+        var message = messageInputDom.value;
+        chatSocket.send(JSON.stringify({
+            'message': message
+        }));
+
+        messageInputDom.value = '';
+    };
+</script>
+
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+<a href="{% url 'signup' %}">signup</a>
+{% endif %}
+{% endblock %}
+</html>

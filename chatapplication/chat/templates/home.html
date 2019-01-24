@@ -1,0 +1,40 @@
+<!-- templates/home.html-->
+
+<!-- first check user is logged in else tell user to log in or create account with sign in option -->
+
+<!-- display name of logged in user and ask for chat room name -->
+
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+ <h3><b> Hi {{ user.username }}!</b></h3>
+  <p><a href="{% url 'logout' %}">logout</a></p>
+What chat room would you like to enter?<br/>
+
+    <input id="room-name-input" type="text" size="100"/><br/>
+
+    <input id="room-name-submit" type="button" value="Enter"/>
+
+    <script>
+        document.querySelector('#room-name-input').focus();
+        document.querySelector('#room-name-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // enter, return
+                document.querySelector('#room-name-submit').click();
+            }
+        };
+
+        document.querySelector('#room-name-submit').onclick = function(e) {
+            var roomName = document.querySelector('#room-name-input').value;
+            window.location.pathname = '/chat/' + roomName + '/';
+        };
+    </script>
+{% else %}
+  <H1>WELCOME TO CHAT APP</H1>
+  <a href="{% url 'login' %}">login</a>
+<a href="{% url 'signup' %}">signup</a>
+
+{% endif %}
+{% endblock %}
